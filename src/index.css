@@ -1,0 +1,172 @@
+body {
+  font-family: "Gilroy", sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+  height: 10vh;
+  margin-top: 18%;
+}
+
+.first {
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 10%;
+}
+
+#your-todo {
+  padding-right: 64%;
+  text-align: left;
+  height: 30px;
+}
+
+#clear-all {
+  margin: 0;
+  text-align: center;
+  background-color: rgb(243, 243, 243);
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+#clear-all:hover {
+  scale: 1.001;
+}
+
+.container {
+  width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 0 10px #000;
+  position: relative;
+}
+
+.to-do-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding: 0 16px;
+}
+
+.to-do-title p {
+  color: #8c8c8c;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+form .fa {
+  cursor: pointer;
+  color: #8c8c8c;
+}
+
+li .fa {
+  position: absolute;
+  right: 16px;
+  color: #8c8c8c;
+  cursor: move;
+}
+
+.to-do-title .fa {
+  cursor: pointer;
+  color: #8c8c8c;
+}
+
+form .fa:hover {
+  color: #000;
+}
+
+li .fa:hover {
+  color: #000;
+}
+
+.to-do-title .fa:hover {
+  color: #000;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 16px;
+}
+
+#new-item {
+  flex: 1;
+  border: none;
+  padding: 10px 0;
+}
+
+#new-item::placeholder {
+  color: #8c8c8c;
+  font-style: italic;
+  font-size: 15px;
+  font-weight: 100;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  gap: 2rem;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+i.fa.fa-trash {
+  margin: 0 1rem;
+}
+
+.bi:hover {
+  scale: 1.1;
+}
+
+li input {
+  margin-right: 10px;
+}
+
+li span {
+  font-weight: 100;
+}
+
+li.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  position: fixed;
+  bottom: 10px;
+  left: 30%;
+  right: 30%;
+}
+
+.bi-trash {
+  display: none;
+}
+
+.bi-trash.active {
+  display: block;
+}
+
+.bi-three-dots-vertical.active {
+  display: none;
+}
+
+.see {
+  display: flex;
+  justify-content: space-between;
+}
