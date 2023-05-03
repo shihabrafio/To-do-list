@@ -170,3 +170,12 @@ footer {
   display: flex;
   justify-content: space-between;
 }
+
+.see-description {
+  flex: 1;
+}
+
+.see-icons {
+  background-color: #c0b9b9;
+  width: 15%;
+}

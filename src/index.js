@@ -12,7 +12,7 @@ const tasks = [
   { description: 'Learn React', completed: true, index: 0 },
   { description: 'Finish quiz', completed: false, index: 1 },
   { description: 'Do laundry', completed: true, index: 2 },
-  { description: 'Do eating', completed: true, index: 3 },
+  { description: 'Do eating', completed: false, index: 3 },
 ];
 
 function displayTasks() {
@@ -21,12 +21,12 @@ function displayTasks() {
     const item = document.createElement('li');
     item.innerHTML = `
         <div class="see">
-          <div>
+          <label class="see-description">
           <input type="checkbox" ${task.completed ? 'checked' : ''}
           data-index="${task.index}">
           <span>${task.description}</span>
-          </div>
-          <div>
+          </label>
+          <div class="see-icons">
           <i class="bi bi-three-dots-vertical"></i>
           <i class="bi bi-trash"></i>
           </div>
