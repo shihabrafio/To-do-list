@@ -16,7 +16,9 @@ const tasks = [
 ];
 
 function displayTasks() {
-  addlist.innerHTML = '';
+  // set to local storage here
+  localStorage.setItem('todolist',JSON.stringify(tasks));
+    addlist.innerHTML = '';
   tasks.forEach((task, index, completed) => {
     const item = document.createElement('li');
     item.innerHTML = `
@@ -27,13 +29,31 @@ function displayTasks() {
           <span>${task.description}</span>
           </div>
           <div>
-          <i class="bi bi-three-dots-vertical"></i>
+          <i class="bi bi-three-dots-vertical" data-id=${task.index}></i>
           <i class="bi bi-trash"></i>
           </div>
         </div>
         `;
     addlist.appendChild(item);
   });
+  setEventListener()
+}
+
+//const {id} = dataId;
+
+function edit(e){
+  const number = parseInt(e.target.getAttribute('data-id'));
+  const editTask = tasks.filter(task => task.index == number)[0]
+  const newDescription = 'this will be the input'
+  editTask.description = newDescription;
+  displayTasks();
+}
+
+function setEventListener(){
+  const editIcons = document.querySelectorAll('.bi-three-dots-vertical');
+  editIcons.forEach(icon=> icon.addEventListener('click', edit))
+ // console.log(editIcons)
 }
 
 window.onload = displayTasks();
+
