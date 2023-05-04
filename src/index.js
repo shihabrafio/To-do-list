@@ -18,14 +18,14 @@ const saveTasks = () => {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 };
 
-const removeTask=(index)=> {
+const removeTask = (index) => {
   tasks.splice(index, 1);
   displayTasks();
   for (let i = 0; i < tasks.length; i += 1) {
     tasks[i].id = i;
   }
   saveTasks();
-}
+};
 
 const getEventListener = () => {
   const editIcons = document.querySelectorAll('.bi-pencil');
