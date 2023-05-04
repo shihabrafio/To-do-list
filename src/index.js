@@ -1,4 +1,5 @@
 import './index.css';
+import updateIndexes from './update.js';
 
 const container = document.querySelector('.container');
 const headtag = document.querySelector('.to-do-title');
@@ -16,7 +17,8 @@ if (localStorage.tasks) {
 const saveTasks = () => {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 };
-function removeTask(index) {
+
+const removeTask=(index)=> {
   tasks.splice(index, 1);
   displayTasks();
   for (let i = 0; i < tasks.length; i += 1) {
@@ -146,11 +148,9 @@ const editTask = (index, taskElement) => {
   });
   taskElement.classList.add('selected');
 };
-const updateIndexes = () => {
-  for (let i = 0; i < tasks.length; i += 1) {
-    tasks[i].index = i;
-  }
-};
+
+updateIndexes();
+
 const clearAlltask = () => {
   tasks = tasks.filter((task) => !task.completed);
   updateIndexes();
