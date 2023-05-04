@@ -1,8 +1,6 @@
 import './index.css';
 import updateIndexes from './update.js';
 
-const container = document.querySelector('.container');
-const headtag = document.querySelector('.to-do-title');
 const form = document.getElementById('form');
 const text = document.getElementById('your-todo');
 const addlist = document.getElementById('todo-list');
@@ -17,7 +15,6 @@ if (localStorage.tasks) {
 const saveTasks = () => {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 };
-
 const removeTask = (index) => {
   tasks.splice(index, 1);
   displayTasks();
@@ -100,7 +97,6 @@ const addTasks = () => {
   tasks.push(x);
   displayTasks();
   text.value = '';
-  getEventListener();
   saveTasks();
 };
 
@@ -148,8 +144,6 @@ const editTask = (index, taskElement) => {
   });
   taskElement.classList.add('selected');
 };
-
-updateIndexes();
 
 const clearAlltask = () => {
   tasks = tasks.filter((task) => !task.completed);
