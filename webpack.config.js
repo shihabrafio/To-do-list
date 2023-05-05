@@ -8,7 +8,7 @@ module.exports = {
   },
   // devtool: 'inline-source-map',
   devServer: {
-    static: './dist', // Serve static files from the 'dist' directory
+    static: './docs', // Serve static files from the 'dist' directory
     port: 8080,
     open: true,
   },
@@ -19,7 +19,7 @@ module.exports = {
   ],
   output: {
     filename: '[name].bundle.js', // Use the entry point name for the bundle filename
-    path: path.resolve(__dirname, 'dist'), // Output to the 'dist' directory
+    path: path.resolve(__dirname, 'docs'), // Output to the 'dist' directory
     clean: true, // Clean the output directory before building
   },
   module: {
