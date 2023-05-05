@@ -128,18 +128,7 @@ const editTask = (index, taskElement) => {
   inputElement.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
       event.preventDefault();
-      const newDescription = inputElement.value.trim();
-      if (newDescription !== '') {
-        task.description = newDescription;
-        inputElement.replaceWith(spanElement);
-        spanElement.textContent = newDescription;
-        taskElement.classList.remove('selected');
-        displayTasks();
-        getEventListener();
-        saveTasks();
-      } else {
-        removeTask(index);
-      }
+      inputElement.blur();
     }
   });
   taskElement.classList.add('selected');
